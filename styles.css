@@ -1,0 +1,70 @@
+/* Redesigned styles for Science Express VMS */
+:root{
+  --bg:linear-gradient(180deg,#f7fbff,#eef7ff);
+  --card:#ffffff;
+  --muted:#6b7280;
+  --primary:#0066ff;
+  --accent:#eaf2ff;
+  --danger:#ff5252;
+  --radius:12px;
+  --glass: rgba(255,255,255,0.6);
+  --shadow: 0 10px 30px rgba(16,24,40,0.06);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:#08223a}
+.container{max-width:1100px;margin:0 auto;padding:18px}
+
+/* Header */
+.header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--primary),#00c2ff);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px;box-shadow:0 6px 18px rgba(0,102,255,0.18)}
+.brand h1{margin:0;font-size:18px}
+.subtitle{margin:0;font-size:13px;color:var(--muted)}
+
+.header-actions{display:flex;gap:10px}
+.btn{border:0;padding:8px 12px;border-radius:10px;font-weight:600;cursor:pointer;box-shadow:var(--shadow);background:white}
+.btn.ghost{background:transparent;border:1px solid rgba(8,34,58,0.06)}
+.btn.primary{background:var(--primary);color:white}
+.btn.secondary{background:#f1f7ff;border:1px solid rgba(0,102,255,0.06)}
+.btn.danger{background:var(--danger);color:white}
+
+/* Main layout */
+.main{display:flex;gap:18px;align-items:flex-start}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;width:100%}
+.left{flex:0 0 420px}
+.right{flex:1;min-height:420px}
+
+/* Form */
+.field{display:block;margin-bottom:10px}
+.row{display:flex;gap:10px}
+.label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+input[type="text"], input[type="search"]{width:100%;padding:10px;border-radius:8px;border:1px solid #eef6ff;background:linear-gradient(180deg,#fff,#fbfdff);font-size:14px}
+.req{color:#d02323}
+
+.camera{margin:12px 0}
+video{width:100%;height:220px;background:#000;border-radius:8px;object-fit:cover}
+.cam-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+
+.actions{display:flex;gap:10px;margin-top:10px}
+.note{margin-top:12px;padding:10px;background:var(--accent);border-radius:8px;color:#08304b;font-size:13px}
+
+/* Table */
+.table-header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px}
+.search{padding:8px 10px;border-radius:10px;border:1px solid #eef6ff;background:#fff;min-width:200px}
+
+.table-wrap{overflow:auto;border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:12px 10px;text-align:left;border-bottom:1px solid #f3f6fb}
+th{background:linear-gradient(90deg,#fbfdff,#f7fbff);font-weight:600;color:#0b2545}
+td img{height:48px;border-radius:6px;object-fit:cover}
+
+/* Footer */
+.footer{padding:14px 0;text-align:center;color:var(--muted);font-size:13px;margin-top:18px}
+
+/* Responsive */
+@media (max-width:980px){
+  .main{flex-direction:column}
+  .left{width:100%}
+  .header-actions{display:none}
+}

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Science Express — Visitor Management</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <div class="logo">SE</div>
+      <div>
+        <h1>Science Express</h1>
+        <p class="subtitle">Visitor Management System</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button id="exportCsv" class="btn ghost">Export CSV</button>
+      <button id="printBadge" class="btn ghost">Print Last Badge</button>
+      <button id="clearAll" class="btn danger">Clear All</button>
+    </div>
+  </header>
+
+  <main class="main container">
+    <section class="card left">
+      <h2>Check‑In</h2>
+      <form id="checkinForm" autocomplete="off">
+        <div class="row">
+          <label class="field">
+            <span class="label">Name <span class="req">*</span></span>
+            <input id="name" type="text" required placeholder="Full name">
+          </label>
+        </div>
+
+        <div class="row">
+          <label class="field">
+            <span class="label">Contact</span>
+            <input id="contact" type="text" placeholder="Phone or email">
+          </label>
+          <label class="field">
+            <span class="label">Organization</span>
+            <input id="org" type="text" placeholder="School / Organization">
+          </label>
+        </div>
+
+        <label class="field">
+          <span class="label">Purpose</span>
+          <input id="purpose" type="text" placeholder="Exhibition, Research, Visit">
+        </label>
+
+        <div class="camera">
+          <video id="video" playsinline autoplay muted></video>
+          <canvas id="canvas" style="display:none"></canvas>
+          <div class="cam-row">
+            <button type="button" id="startCam" class="btn">Start Camera</button>
+            <button type="button" id="snap" class="btn secondary">Capture</button>
+            <button type="button" id="stopCam" class="btn ghost">Stop</button>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn primary" type="submit">Check In</button>
+          <button class="btn ghost" type="button" id="clearForm">Clear</button>
+        </div>
+      </form>
+
+      <div class="note">
+        <strong>Tip:</strong> Capture photo for better identification. Works offline — data saved in browser.
+      </div>
+    </section>
+
+    <section class="card right">
+      <div class="table-header">
+        <h2>Visitors</h2>
+        <input id="search" class="search" placeholder="Search by name, org or ID">
+      </div>
+      <div class="table-wrap">
+        <table id="visitorsTable" aria-live="polite">
+          <thead>
+            <tr>
+              <th>ID</th><th>Name</th><th>Contact</th><th>Org</th><th>Purpose</th><th>Time</th><th>Photo</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">Made with ❤️ — HTML • CSS • JavaScript • localStorage</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
